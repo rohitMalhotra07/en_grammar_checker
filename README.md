@@ -1,1 +1,1 @@
-- Based on DeBERTaV3 and GED dataset
+Based on DeBERTaV3 and GED dataset
