@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "rm_en_grammar_check"
+  site-url: "https://rohitMalhotra07.github.io/en_grammar_checker"
+  description: "Model to check whether sentence is in correct english grammar"
+  repo-branch: main
+  repo-url: "https://github.com/rohitMalhotra07/en_grammar_checker"
