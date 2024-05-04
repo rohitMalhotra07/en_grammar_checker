@@ -6,4 +6,5 @@ d = { 'settings': { 'branch': 'main',
                 'git_url': 'https://github.com/rohitMalhotra07/en_grammar_checker',
                 'lib_path': 'en_grammar_checker'},
   'syms': { 'en_grammar_checker.config': {'en_grammar_checker.config.Config': ('config.html#config', 'en_grammar_checker/config.py')},
-            'en_grammar_checker.core': {'en_grammar_checker.core.foo': ('core.html#foo', 'en_grammar_checker/core.py')}}}
+            'en_grammar_checker.core': {'en_grammar_checker.core.foo': ('core.html#foo', 'en_grammar_checker/core.py')},
+            'en_grammar_checker.models': {}}}
