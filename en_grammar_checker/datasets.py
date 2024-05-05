@@ -50,14 +50,13 @@ class BertClassificationDataset(Dataset):
             return_tensors="pt",  # Return pytorch tensors.
         )
 
-        label = torch.as_tensor(row[self.label_clm], dtype=torch.float32)
-        # calculated_tensor = []
         if self.is_test:
             return (
                 encoded_dict["input_ids"].squeeze(),
                 encoded_dict["attention_mask"].squeeze(),
             )
         else:
+            label = torch.as_tensor(row[self.label_clm], dtype=torch.float32)
             return (
                 encoded_dict["input_ids"].squeeze(),
                 encoded_dict["attention_mask"].squeeze(),
@@ -65,8 +64,15 @@ class BertClassificationDataset(Dataset):
             )
 
 # %% ../nbs/datasets.ipynb 6
-def get_train_data_loader(cnfg, df):
-    dataset = BertClassificationDataset(cnfg, df, is_test=False)
+def get_train_data_loader(
+    cnfg,
+    df,
+    input_clm: str = "sentence",
+    label_clm: str = "label",
+):
+    dataset = BertClassificationDataset(
+        cnfg, df, is_test=False, input_clm=input_clm, label_clm=label_clm
+    )
     dataloader = DataLoader(
         dataset,
         sampler=RandomSampler(dataset),  # Select batches randomly
@@ -76,8 +82,15 @@ def get_train_data_loader(cnfg, df):
     return dataloader
 
 # %% ../nbs/datasets.ipynb 7
-def get_val_data_loader(cnfg, df):
-    dataset = BertClassificationDataset(cnfg, df, is_test=False)
+def get_val_data_loader(
+    cnfg,
+    df,
+    input_clm: str = "sentence",
+    label_clm: str = "label",
+):
+    dataset = BertClassificationDataset(
+        cnfg, df, is_test=False, input_clm=input_clm, label_clm=label_clm
+    )
     dataloader = DataLoader(
         dataset,
         sampler=SequentialSampler(dataset),  # Select batches sequentialy
@@ -87,8 +100,15 @@ def get_val_data_loader(cnfg, df):
     return dataloader
 
 # %% ../nbs/datasets.ipynb 8
-def get_test_data_loader(cnfg, df):
-    dataset = BertClassificationDataset(cnfg, df, is_test=False)
+def get_test_data_loader(
+    cnfg,
+    df,
+    input_clm: str = "sentence",
+    label_clm=None,
+):
+    dataset = BertClassificationDataset(
+        cnfg, df, is_test=True, input_clm=input_clm, label_clm=label_clm
+    )
     dataloader = DataLoader(
         dataset,
         sampler=SequentialSampler(dataset),  # Select batches sequentialy
