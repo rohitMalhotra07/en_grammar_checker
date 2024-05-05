@@ -4,8 +4,7 @@
 __all__ = []
 
 # %% ../nbs/models.ipynb 2
-import transformers
 import torch
 import torch.nn as nn
-
-from transformers import AutoModel, AutoTokenizer, AutoConfig
+import transformers
+from transformers import AutoConfig, AutoModel, AutoTokenizer

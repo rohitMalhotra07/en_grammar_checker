@@ -1,0 +1,8 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_core.ipynb
+      - Config.ipynb
+      - EDA_dataset.ipynb
+      - models.ipynb

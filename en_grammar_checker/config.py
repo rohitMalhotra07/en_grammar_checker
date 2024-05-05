@@ -6,7 +6,15 @@ __all__ = ['Config']
 # %% ../nbs/Config.ipynb 2
 class Config:
     "Class to define config for the project"
-    base_dataset_path  = '../datasets/cola_public/raw/'
-    base_model_name = 'microsoft/deberta-v3-large'
+    base_dataset_path = "../data/cola_public/raw/"
+    base_model_name = "microsoft/deberta-v3-large"
 
+    train_path = f"{base_dataset_path}in_domain_train.tsv"
 
+    # Model Params
+    context_length = 512  # Maximum sentence length
+
+    # Training Params
+    train_batch_size = 32
+    val_batch_size = 32
+    test_batch_size = 1
