@@ -13,8 +13,9 @@ class Config:
 
     # Model Params
     context_length = 512  # Maximum sentence length
+    num_classes = 2
 
     # Training Params
-    train_batch_size = 32
-    val_batch_size = 32
+    train_batch_size = 8
+    val_batch_size = 8
     test_batch_size = 1

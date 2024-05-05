@@ -21,4 +21,9 @@ d = { 'settings': { 'branch': 'main',
                                                                                                     'en_grammar_checker/datasets.py'),
                                              'en_grammar_checker.datasets.get_val_data_loader': ( 'datasets.html#get_val_data_loader',
                                                                                                   'en_grammar_checker/datasets.py')},
-            'en_grammar_checker.models': {}}}
+            'en_grammar_checker.models': { 'en_grammar_checker.models.EnDeBertaClassifier': ( 'models.html#endebertaclassifier',
+                                                                                              'en_grammar_checker/models.py'),
+                                           'en_grammar_checker.models.EnDeBertaClassifier.__init__': ( 'models.html#endebertaclassifier.__init__',
+                                                                                                       'en_grammar_checker/models.py'),
+                                           'en_grammar_checker.models.EnDeBertaClassifier.forward': ( 'models.html#endebertaclassifier.forward',
+                                                                                                      'en_grammar_checker/models.py')}}}
