@@ -10,6 +10,8 @@ class Config:
     base_dataset_path = "../data/cola_public/raw/"
     base_model_name = "microsoft/deberta-v3-large"
 
+    trained_model_path = "../trained_models/en_grammar_checker1.pt"
+
     train_path = f"{base_dataset_path}in_domain_train.tsv"
 
     train_val_split = 0.15
