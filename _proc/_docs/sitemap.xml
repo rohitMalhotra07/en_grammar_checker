@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/config.html</loc>
-    <lastmod>2024-05-04T21:16:15.330Z</lastmod>
+    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/index.html</loc>
+    <lastmod>2024-05-06T20:36:33.314Z</lastmod>
   </url>
   <url>
-    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/models.html</loc>
-    <lastmod>2024-05-04T21:16:16.266Z</lastmod>
+    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/training_pipeline.html</loc>
+    <lastmod>2024-05-06T20:36:33.290Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/inference.html</loc>
+    <lastmod>2024-05-06T20:36:33.254Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/datasets.html</loc>
+    <lastmod>2024-05-06T20:36:34.434Z</lastmod>
   </url>
   <url>
     <loc>https://rohitMalhotra07.github.io/en_grammar_checker/EDA_dataset.html</loc>
-    <lastmod>2024-05-04T21:16:15.322Z</lastmod>
+    <lastmod>2024-05-06T20:36:33.250Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/models.html</loc>
+    <lastmod>2024-05-06T20:36:34.410Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/trainer.html</loc>
+    <lastmod>2024-05-06T20:36:35.438Z</lastmod>
   </url>
   <url>
     <loc>https://rohitMalhotra07.github.io/en_grammar_checker/core.html</loc>
-    <lastmod>2024-05-04T19:52:26.347Z</lastmod>
+    <lastmod>2024-05-06T20:36:33.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rohitMalhotra07.github.io/en_grammar_checker/config.html</loc>
+    <lastmod>2024-05-06T20:36:33.334Z</lastmod>
   </url>
 </urlset>

@@ -5,4 +5,8 @@ website:
       - 00_core.ipynb
       - Config.ipynb
       - EDA_dataset.ipynb
+      - datasets.ipynb
+      - inference.ipynb
       - models.ipynb
+      - trainer.ipynb
+      - training_pipeline.ipynb

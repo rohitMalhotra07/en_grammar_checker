@@ -4,10 +4,14 @@
 __all__ = ['BertClassificationDataset', 'get_train_data_loader', 'get_val_data_loader', 'get_test_data_loader']
 
 # %% ../nbs/datasets.ipynb 2
+import os
+
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset, RandomSampler, SequentialSampler
 from transformers import AutoTokenizer
+
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # %% ../nbs/datasets.ipynb 5
 class BertClassificationDataset(Dataset):
