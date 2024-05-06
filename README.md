@@ -5,7 +5,8 @@
 
 - Base model: DeBERTaV3
 - Finetuning DeBERTaV3 on CoLA dataset :
-  https://www.kaggle.com/datasets/krazy47/cola-the-corpus-of-linguistic-acceptability/data
+  https://www.kaggle.com/datasets/krazy47/cola-the-corpus-of-linguistic-acceptability/data +
+  GED dataset merge
 - checkout docs: https://rohitmalhotra07.github.io/en_grammar_checker/
 
 ## Install
