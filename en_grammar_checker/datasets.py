@@ -45,7 +45,8 @@ class BertClassificationDataset(Dataset):
             row[self.input_clm],  # Sentence to encode.
             add_special_tokens=True,  # Add '[CLS]' and '[SEP]'
             max_length=self.cnfg.context_length,  # Pad & truncate all sentences.
-            pad_to_max_length=True,
+            truncation=True,
+            padding="max_length",
             return_attention_mask=True,  # Construct attn. masks.
             return_tensors="pt",  # Return pytorch tensors.
         )
@@ -56,7 +57,7 @@ class BertClassificationDataset(Dataset):
                 encoded_dict["attention_mask"].squeeze(),
             )
         else:
-            label = torch.as_tensor(row[self.label_clm], dtype=torch.float32)
+            label = torch.as_tensor(row[self.label_clm], dtype=torch.int64)
             return (
                 encoded_dict["input_ids"].squeeze(),
                 encoded_dict["attention_mask"].squeeze(),
@@ -77,6 +78,7 @@ def get_train_data_loader(
         dataset,
         sampler=RandomSampler(dataset),  # Select batches randomly
         batch_size=cnfg.train_batch_size,
+        num_workers=cnfg.num_workers,
     )
 
     return dataloader
@@ -95,6 +97,7 @@ def get_val_data_loader(
         dataset,
         sampler=SequentialSampler(dataset),  # Select batches sequentialy
         batch_size=cnfg.val_batch_size,
+        num_workers=cnfg.num_workers,
     )
 
     return dataloader
@@ -113,6 +116,7 @@ def get_test_data_loader(
         dataset,
         sampler=SequentialSampler(dataset),  # Select batches sequentialy
         batch_size=cnfg.test_batch_size,
+        num_workers=cnfg.num_workers,
     )
 
     return dataloader

@@ -4,17 +4,14 @@
 __all__ = ['EnDeBertaClassifier']
 
 # %% ../nbs/models.ipynb 2
+import math
+
 import torch
 import torch.nn as nn
 import transformers
-from transformers import (
-    AutoConfig,
-    AutoModel,
-    AutoTokenizer,
-    BertForSequenceClassification,
-)
+from transformers import AutoConfig, AutoModel, AutoTokenizer
 
-# %% ../nbs/models.ipynb 27
+# %% ../nbs/models.ipynb 28
 class EnDeBertaClassifier(nn.Module):
     def __init__(self, cnfg):
         super().__init__()
@@ -24,24 +21,31 @@ class EnDeBertaClassifier(nn.Module):
             cnfg.base_model_name, config=self.model_config
         )
 
+        self.base_model.requires_grad_(False)  # Freeze the pretrained weights
         ## Classifier
         self.classifier = nn.Sequential(
-            nn.Dropout(0.1),
             nn.Linear(
                 self.model_config.pooler_hidden_size,
                 self.model_config.pooler_hidden_size,
             ),
-            nn.Tanh(),
-            nn.Linear(self.model_config.pooler_hidden_size, cnfg.num_classes),
-            nn.Softmax(dim=1),
+            nn.ReLU(),
+            nn.Dropout(0.1),
+            nn.Linear(
+                self.model_config.pooler_hidden_size,
+                128,
+            ),
+            nn.ReLU(),
+            nn.Dropout(0.1),
+            # nn.Linear(self.model_config.pooler_hidden_size, cnfg.num_classes),
+            nn.Linear(128, cnfg.num_classes),
         )
 
     def forward(self, input_ids, attention_mask):
         base_embeddings = self.base_model(
             input_ids=input_ids, attention_mask=attention_mask
         )
-        cls_embedding = base_embeddings.last_hidden_state[:, 0:1, :].squeeze(
-            1
+        cls_embedding = base_embeddings.last_hidden_state[:, 0:1, :].flatten(
+            start_dim=1
         )  # Taking embeddings of [CLS] token
 
         logits = self.classifier(cls_embedding)

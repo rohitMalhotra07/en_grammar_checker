@@ -6,16 +6,32 @@ __all__ = ['Config']
 # %% ../nbs/Config.ipynb 2
 class Config:
     "Class to define config for the project"
+    seed = 42
     base_dataset_path = "../data/cola_public/raw/"
     base_model_name = "microsoft/deberta-v3-large"
 
     train_path = f"{base_dataset_path}in_domain_train.tsv"
+
+    train_val_split = 0.15
+    num_workers = 4
 
     # Model Params
     context_length = 512  # Maximum sentence length
     num_classes = 2
 
     # Training Params
-    train_batch_size = 8
-    val_batch_size = 8
+    training_logs_path = "../training_logs"
+    experiment_name = "test_run1"
+
+    train_batch_size = 32
+    val_batch_size = 32
     test_batch_size = 1
+    num_epochs = 50
+    early_stopping_rounds = 7
+    # learning_rate = 2e-5
+    # learning_rate = 0.0002051162178825565
+    learning_rate = 2e-4
+    eps = 1e-8
+    weight_decay = 0.01
+    betas = (0.9, 0.999)
+    warmup_prop = 0.1
