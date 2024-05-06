@@ -7,14 +7,16 @@ __all__ = ['Config']
 class Config:
     "Class to define config for the project"
     seed = 42
-    base_dataset_path = "../data/cola_public/raw/"
+    # base_dataset_path = "../data/cola_public/raw/"
+    base_dataset_path = "../data/merged_data/"
     base_model_name = "microsoft/deberta-v3-large"
 
     trained_model_path = "../trained_models/en_grammar_checker1.pt"
 
-    train_path = f"{base_dataset_path}in_domain_train.tsv"
+    # train_path = f"{base_dataset_path}in_domain_train.tsv"
+    train_path = f"{base_dataset_path}train_data.csv"
 
-    train_val_split = 0.15
+    train_val_split = 0.20
     num_workers = 4
 
     # Model Params
@@ -23,7 +25,7 @@ class Config:
 
     # Training Params
     training_logs_path = "../training_logs"
-    experiment_name = "test_run1"
+    experiment_name = "test_run2"
 
     train_batch_size = 32
     val_batch_size = 32
